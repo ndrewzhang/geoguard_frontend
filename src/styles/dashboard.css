@@ -1,0 +1,412 @@
+/* Dashboard Page Styles */
+
+.dashboard-page {
+  min-height: 100vh;
+  background-color: #f5f6fa;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.dashboard-header h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+  font-size: 1.1rem;
+  margin: 0;
+  opacity: 0.95;
+}
+
+/* URL Search Section */
+.url-search-section {
+  background-color: white;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.url-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.url-input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.url-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #ecf0f1;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.url-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.url-input::placeholder {
+  color: #95a5a6;
+}
+
+.url-input-group .btn {
+  padding: 0.75rem 2rem;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.url-input-group .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.url-result-card {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ecf0f1 100%);
+  border-left: 4px solid #667eea;
+}
+
+.url-result-card h3 {
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+}
+
+.result-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.result-json {
+  background: #2c3e50;
+  color: #2ecc71;
+  padding: 1.5rem;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  margin: 0;
+}
+
+/* Statistics Section */
+.stats-section {
+  background-color: #f5f6fa;
+}
+
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 200px;
+  justify-content: center;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.stat-card-primary::before {
+  background: linear-gradient(90deg, #3498db, #2980b9);
+}
+
+.stat-card-warning::before {
+  background: linear-gradient(90deg, #f39c12, #e67e22);
+}
+
+.stat-card-danger::before {
+  background: linear-gradient(90deg, #e74c3c, #c0392b);
+}
+
+.stat-card-success::before {
+  background: linear-gradient(90deg, #27ae60, #229954);
+}
+
+.stat-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 3rem;
+  opacity: 0.1;
+}
+
+.stat-value {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  z-index: 1;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-weight: 500;
+  z-index: 1;
+}
+
+/* Charts Section */
+.charts-section {
+  background-color: white;
+}
+
+.chart-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-card h3 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+}
+
+.chart-container {
+  flex: 1;
+  position: relative;
+  height: 300px;
+  width: 100%;
+}
+
+/* Incidents Section */
+.incidents-section {
+  background-color: #f5f6fa;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.incidents-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+.incidents-table thead {
+  background-color: #2c3e50;
+  color: white;
+  font-weight: 600;
+}
+
+.incidents-table th {
+  padding: 1.25rem;
+  text-align: left;
+  border-bottom: 2px solid #ecf0f1;
+}
+
+.incidents-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.incidents-table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+.incidents-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.incidents-table tbody tr.severity-high {
+  border-left: 4px solid #e74c3c;
+}
+
+.incidents-table tbody tr.severity-medium {
+  border-left: 4px solid #f39c12;
+}
+
+.incidents-table tbody tr.severity-low {
+  border-left: 4px solid #27ae60;
+}
+
+/* Badge Styles */
+.badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-danger {
+  background-color: #fadbd8;
+  color: #c0392b;
+}
+
+.badge-warning {
+  background-color: #fdebd0;
+  color: #d68910;
+}
+
+.badge-success {
+  background-color: #d5f4e6;
+  color: #1e8449;
+}
+
+/* Status Styles */
+.status {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.status-active {
+  background-color: #ffeaa7;
+  color: #d63031;
+}
+
+.status-resolved {
+  background-color: #55efc4;
+  color: #00b894;
+}
+
+/* Section Title */
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+
+  .stat-value {
+    font-size: 2.5rem;
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+
+  .incidents-table th,
+  .incidents-table td {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .url-input-group {
+    flex-direction: column;
+  }
+
+  .url-input-group .btn {
+    width: 100%;
+  }
+
+  .result-json {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .dashboard-header p {
+    font-size: 1rem;
+  }
+
+  .stat-card {
+    min-height: 150px;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+  }
+
+  .chart-container {
+    height: 200px;
+  }
+
+  .incidents-table {
+    font-size: 0.85rem;
+  }
+
+  .incidents-table th,
+  .incidents-table td {
+    padding: 0.5rem;
+  }
+
+  .badge,
+  .status {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.7rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .url-input {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.75rem;
+  }
+
+  .url-input-group {
+    gap: 0.5rem;
+  }
+
+  .result-json {
+    font-size: 0.75rem;
+    padding: 1rem;
+  }
+}
