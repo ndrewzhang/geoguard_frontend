@@ -8,9 +8,6 @@ const API_BASE_URL = 'http://localhost:3000/api';
 const api: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,
   timeout: 10000,
-  headers: {
-    'Content-Type': 'application/json',
-  },
 });
 
 // API Service object with all endpoints
@@ -73,7 +70,7 @@ export const apiService = {
   // Fetch URL info from backend
   getUrlInfo: async (url: string) => {
     try {
-      const response = await api.get('/info/', {
+      const response = await api.get('/info', {
         params: {
           url: url,
         },
