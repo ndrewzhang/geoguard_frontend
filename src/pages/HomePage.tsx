@@ -21,9 +21,9 @@ export function HomePage() {
       <section className="hero-section">
         <div className="container">
           <div className="hero-content">
-            <h1 className="hero-title">Welcome to GeoGuard</h1>
+            <h1 className="hero-title">Welcome to GeoGuard!</h1>
             <p className="hero-subtitle">
-              Real-time geolocation security and monitoring system
+              Geolocation security and monitoring system
             </p>
           </div>
 
@@ -38,12 +38,12 @@ export function HomePage() {
           <div className="grid grid-2">
             <div className="card feature-card">
               <div className="feature-icon">📍</div>
-              <h3>Real-Time Location Tracking</h3>
-              <p>Monitor multiple locations simultaneously with real-time updates and alerts.</p>
+              <h3>Location Information Tracking</h3>
+              <p>Provide any URL and GeoGuard will provide detailed location and IP information!</p>
             </div>
             <div className="card feature-card">
               <div className="feature-icon">📊</div>
-              <h3>Analytics Dashboard</h3>
+              <h3>Analytics Dashboard (Coming Soon)</h3>
               <p>Detailed analytics and insights about security threats and incidents.</p>
             </div>
           </div>
