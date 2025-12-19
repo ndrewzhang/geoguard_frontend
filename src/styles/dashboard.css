@@ -104,6 +104,53 @@
   margin: 0;
 }
 
+/* Structured result fields */
+.result-fields .fields-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.result-fields .field {
+  background: #fbfdff;
+  border: 1px solid #eef2f7;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+}
+
+.result-fields .field.full-width {
+  grid-column: 1 / -1;
+}
+
+.result-fields .label {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 0.35rem;
+  font-weight: 700; /* make the field name bold */
+}
+
+.result-fields .value {
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+.location-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.country-flag {
+  width: 28px; /* smaller flag */
+  height: auto;
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+
+.flag-wrap {
+  margin-top: 0.5rem;
+}
+
 /* Statistics Section */
 .stats-section {
   background-color: #f5f6fa;
