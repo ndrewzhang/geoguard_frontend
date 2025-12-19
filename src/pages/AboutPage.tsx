@@ -85,50 +85,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="team-section section">
-        <div className="container">
-          <h2 className="section-title">Leadership Team</h2>
-          <div className="grid grid-2">
-            <div className="card team-card">
-              <div className="team-image">👨‍💼</div>
-              <h3>John Smith</h3>
-              <p className="team-role">Chief Executive Officer</p>
-              <p className="team-bio">
-                20+ years of experience in cybersecurity and enterprise solutions with a passion
-                for innovation.
-              </p>
-            </div>
-            <div className="card team-card">
-              <div className="team-image">👩‍💼</div>
-              <h3>Sarah Johnson</h3>
-              <p className="team-role">Chief Technology Officer</p>
-              <p className="team-bio">
-                Expert in real-time data processing and cloud infrastructure with deep technical
-                expertise.
-              </p>
-            </div>
-            <div className="card team-card">
-              <div className="team-image">👨‍💼</div>
-              <h3>Michael Chen</h3>
-              <p className="team-role">Chief Operations Officer</p>
-              <p className="team-bio">
-                Veteran of operational excellence with proven track record in scaling organizations
-                globally.
-              </p>
-            </div>
-            <div className="card team-card">
-              <div className="team-image">👩‍💼</div>
-              <h3>Emily Rodriguez</h3>
-              <p className="team-role">Head of Product</p>
-              <p className="team-bio">
-                Passionate about user experience and creating products that solve real-world
-                security challenges.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Leadership Team section removed per request */}
 
       {/* Technology Stack Section */}
       <section className="tech-section section">
@@ -155,17 +112,7 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="contact-section section">
-        <div className="container text-center">
-          <h2>Get In Touch</h2>
-          <p>Have questions or interested in learning more about GeoGuard?</p>
-          <div className="contact-buttons">
-            <button className="btn btn-primary">Contact Us</button>
-            <button className="btn btn-secondary">Request Demo</button>
-          </div>
-        </div>
-      </section>
+      {/* Contact section removed per request */}
     </div>
   );
 }

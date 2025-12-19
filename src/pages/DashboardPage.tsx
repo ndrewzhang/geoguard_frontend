@@ -1,10 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title } from 'chart.js';
-import { Pie, Bar } from 'react-chartjs-2';
+// chart components removed per request
 import { apiService } from '../services/api';
 import '../styles/dashboard.css';
 
-ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement, Title);
 
 interface Statistics {
   totalIncidents: number;
@@ -125,47 +123,7 @@ export function DashboardPage() {
     }
   };
 
-  // Prepare data for severity distribution pie chart (Chart.js Library #1)
-  const severityData = {
-    labels: ['High', 'Medium', 'Low'],
-    datasets: [
-      {
-        data: [
-          incidents.filter((i) => i.severity === 'high').length,
-          incidents.filter((i) => i.severity === 'medium').length,
-          incidents.filter((i) => i.severity === 'low').length,
-        ],
-        backgroundColor: ['#e74c3c', '#f39c12', '#27ae60'],
-        borderColor: ['#c0392b', '#d68910', '#1e8449'],
-        borderWidth: 2,
-      },
-    ],
-  };
-
-  // Prepare data for incident type bar chart (Chart.js Library #2)
-  const incidentTypes = Array.from(new Set(incidents.map((i) => i.type)));
-  const barData = {
-    labels: incidentTypes,
-    datasets: [
-      {
-        label: 'Incident Count',
-        data: incidentTypes.map((type) => incidents.filter((i) => i.type === type).length),
-        backgroundColor: 'rgba(102, 126, 234, 0.7)',
-        borderColor: '#667eea',
-        borderWidth: 2,
-      },
-    ],
-  };
-
-  const chartOptions = {
-    responsive: true,
-    maintainAspectRatio: true,
-    plugins: {
-      legend: {
-        position: 'bottom' as const,
-      },
-    },
-  };
+  // Charts removed per request
 
   return (
     <div className="dashboard-page">
@@ -217,118 +175,11 @@ export function DashboardPage() {
         </div>
       </section>
 
-      {/* Statistics Cards */}
-      {loading ? (
-        <div className="loading">Loading dashboard data...</div>
-      ) : error ? (
-        <section className="section">
-          <div className="container">
-            <div className="error-message">{error}</div>
-          </div>
-        </section>
-      ) : stats ? (
-        <section className="stats-section section">
-          <div className="container">
-            <div className="grid grid-2">
-              <div className="card stat-card stat-card-primary">
-                <div className="stat-value">{stats.protectedLocations}</div>
-                <div className="stat-label">Protected Locations</div>
-                <div className="stat-icon">📍</div>
-              </div>
-              <div className="card stat-card stat-card-warning">
-                <div className="stat-value">{stats.activeThreats}</div>
-                <div className="stat-label">Active Threats</div>
-                <div className="stat-icon">⚠️</div>
-              </div>
-              <div className="card stat-card stat-card-danger">
-                <div className="stat-value">{stats.totalIncidents}</div>
-                <div className="stat-label">Total Incidents</div>
-                <div className="stat-icon">🚨</div>
-              </div>
-              <div className="card stat-card stat-card-success">
-                <div className="stat-value">{stats.resolutionRate}%</div>
-                <div className="stat-label">Resolution Rate</div>
-                <div className="stat-icon">✅</div>
-              </div>
-            </div>
-          </div>
-        </section>
-      ) : null}
+      {/* Statistics Cards removed per request */}
 
-      {/* Charts Section */}
-      {!loading && incidents.length > 0 && (
-        <section className="charts-section section">
-          <div className="container">
-            <h2 className="section-title">Security Analytics</h2>
-            <div className="grid grid-2">
-              {/* Severity Distribution Chart */}
-              <div className="card chart-card">
-                <h3>Incident Severity Distribution</h3>
-                <div className="chart-container">
-                  <Pie data={severityData} options={chartOptions} />
-                </div>
-              </div>
+      {/* Charts Section removed per request */}
 
-              {/* Incident Type Chart */}
-              <div className="card chart-card">
-                <h3>Incident Types</h3>
-                <div className="chart-container">
-                  <Bar data={barData} options={chartOptions} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Incidents Table */}
-      {!loading && incidents.length > 0 && (
-        <section className="incidents-section section">
-          <div className="container">
-            <h2 className="section-title">Recent Incidents</h2>
-            <div className="table-responsive">
-              <table className="incidents-table">
-                <thead>
-                  <tr>
-                    <th>Type</th>
-                    <th>Location</th>
-                    <th>Severity</th>
-                    <th>Time</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {incidents.map((incident) => (
-                    <tr key={incident.id} className={`severity-${incident.severity}`}>
-                      <td>{incident.type}</td>
-                      <td>{incident.location}</td>
-                      <td>
-                        <span
-                          className={`badge badge-${
-                            incident.severity === 'high'
-                              ? 'danger'
-                              : incident.severity === 'medium'
-                                ? 'warning'
-                                : 'success'
-                          }`}
-                        >
-                          {incident.severity.toUpperCase()}
-                        </span>
-                      </td>
-                      <td>{incident.timestamp}</td>
-                      <td>
-                        <span className={`status status-${incident.status}`}>
-                          {incident.status.toUpperCase()}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Incidents Table removed per request */}
 
       {/* Empty State */}
       {!loading && incidents.length === 0 && (

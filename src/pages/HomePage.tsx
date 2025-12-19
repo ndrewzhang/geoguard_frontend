@@ -92,46 +92,7 @@ export function HomePage() {
             </p>
           </div>
 
-          {/* Carousel - Custom Implementation with Swiper-like functionality */}
-          <div className="carousel-container">
-            {loading ? (
-              <div className="loading">Loading carousel...</div>
-            ) : error ? (
-              <div className="error-message">{error}</div>
-            ) : images.length > 0 ? (
-              <div className="location-carousel">
-                <div className="carousel-wrapper">
-                  <div className="carousel-slide">
-                    <img src={images[currentSlide].imageUrl} alt={images[currentSlide].title} />
-                    <div className="slide-content">
-                      <h3>{images[currentSlide].title}</h3>
-                      <p>{images[currentSlide].description}</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Navigation Buttons */}
-                <button className="carousel-button carousel-button-prev" onClick={prevSlide}>
-                  ❮
-                </button>
-                <button className="carousel-button carousel-button-next" onClick={nextSlide}>
-                  ❯
-                </button>
-
-                {/* Pagination Dots */}
-                <div className="carousel-pagination">
-                  {images.map((_, index) => (
-                    <button
-                      key={index}
-                      className={`pagination-dot ${index === currentSlide ? 'active' : ''}`}
-                      onClick={() => goToSlide(index)}
-                      aria-label={`Go to slide ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
-            ) : null}
-          </div>
+          {/* Carousel removed per request */}
         </div>
       </section>
 
@@ -139,16 +100,11 @@ export function HomePage() {
       <section className="features-section section">
         <div className="container">
           <h2 className="section-title">Key Features</h2>
-          <div className="grid grid-3">
+          <div className="grid grid-2">
             <div className="card feature-card">
               <div className="feature-icon">📍</div>
               <h3>Real-Time Location Tracking</h3>
               <p>Monitor multiple locations simultaneously with real-time updates and alerts.</p>
-            </div>
-            <div className="card feature-card">
-              <div className="feature-icon">🛡️</div>
-              <h3>Advanced Security</h3>
-              <p>State-of-the-art encryption and security protocols to protect your data.</p>
             </div>
             <div className="card feature-card">
               <div className="feature-icon">📊</div>
@@ -159,41 +115,9 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Locations Overview Section */}
-      <section className="locations-section section">
-        <div className="container">
-          <h2 className="section-title">Protected Locations</h2>
-          {locations.length === 0 ? (
-            <div className="empty-state">
-              <p>No locations available. Check API connection.</p>
-            </div>
-          ) : (
-            <div className="grid grid-2">
-              {locations.slice(0, 6).map((location: any) => (
-                <div key={location.id} className="card location-card">
-                  <h3>{location.name}</h3>
-                  <p>{location.description}</p>
-                  <div className="location-meta">
-                    <span>📍 {location.city}</span>
-                    <span>Status: {location.status}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
+      {/* Locations Overview Section removed per request */}
 
-      {/* Call to Action Section */}
-      <section className="cta-section section">
-        <div className="container text-center">
-          <h2>Ready to Secure Your Locations?</h2>
-          <p>Join thousands of organizations protecting their assets with GeoGuard.</p>
-          <button className="btn btn-primary" style={{ fontSize: '1.125rem', padding: '1rem 2rem' }}>
-            Get Started Today
-          </button>
-        </div>
-      </section>
+      {/* Call to Action Section removed per request */}
     </div>
   );
 }
