@@ -1,105 +1,12 @@
-import { useState, useEffect } from 'react';
-// chart components removed per request
+import { useState } from 'react';
 import { apiService } from '../services/api';
 import '../styles/dashboard.css';
 
-
-interface Statistics {
-  totalIncidents: number;
-  activeThreats: number;
-  protectedLocations: number;
-  resolutionRate: number;
-}
-
-interface IncidentData {
-  id: string;
-  type: string;
-  severity: 'high' | 'medium' | 'low';
-  location: string;
-  timestamp: string;
-  status: 'active' | 'resolved';
-}
-
 export function DashboardPage() {
-  const [stats, setStats] = useState<Statistics | null>(null);
-  const [incidents, setIncidents] = useState<IncidentData[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
   const [urlInput, setUrlInput] = useState('');
   const [urlResult, setUrlResult] = useState<any>(null);
   const [urlLoading, setUrlLoading] = useState(false);
   const [urlError, setUrlError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        // Fetch 2: Get location statistics
-        const statsData = await apiService.getLocationStats();
-        setStats(statsData);
-
-        // Fetch 3: Get security incidents
-        const incidentsData = await apiService.getSecurityIncidents();
-        setIncidents(incidentsData);
-      } catch (err) {
-        console.error('Error fetching dashboard data:', err);
-        setError('Failed to load dashboard data. Using mock data.');
-        // Use mock data for demo
-        setStats({
-          totalIncidents: 245,
-          activeThreats: 12,
-          protectedLocations: 89,
-          resolutionRate: 94.5,
-        });
-        setIncidents([
-          {
-            id: '1',
-            type: 'Intrusion Attempt',
-            severity: 'high',
-            location: 'North Building',
-            timestamp: '2024-01-15 14:30',
-            status: 'active',
-          },
-          {
-            id: '2',
-            type: 'Unauthorized Access',
-            severity: 'medium',
-            location: 'East Wing',
-            timestamp: '2024-01-15 12:15',
-            status: 'resolved',
-          },
-          {
-            id: '3',
-            type: 'Motion Detection',
-            severity: 'low',
-            location: 'South Gate',
-            timestamp: '2024-01-15 10:45',
-            status: 'resolved',
-          },
-          {
-            id: '4',
-            type: 'Perimeter Breach',
-            severity: 'high',
-            location: 'West Fence',
-            timestamp: '2024-01-15 09:20',
-            status: 'resolved',
-          },
-          {
-            id: '5',
-            type: 'Sensor Malfunction',
-            severity: 'medium',
-            location: 'Main Gate',
-            timestamp: '2024-01-15 08:00',
-            status: 'resolved',
-          },
-        ]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   // Handle URL input submission
   const handleUrlSubmit = async (e: React.FormEvent) => {
@@ -181,16 +88,7 @@ export function DashboardPage() {
 
       {/* Incidents Table removed per request */}
 
-      {/* Empty State */}
-      {!loading && incidents.length === 0 && (
-        <section className="section">
-          <div className="container">
-            <div className="empty-state">
-              <p>No incident data available. Check API connection.</p>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Empty state removed per request */}
     </div>
   );
 }
