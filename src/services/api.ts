@@ -1,13 +1,16 @@
 import axios from 'axios';
 import type { AxiosInstance } from 'axios';
 
-// Configure the base API URL - adjust this to match your backend API
-const API_BASE_URL = 'http://localhost:3000/api';
+// Configure the base API URL - use Vercel env var when available
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localhost:3000/api';
 
 // Create axios instance with default config
 const api: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,
   timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 // API Service object with all endpoints
@@ -70,7 +73,7 @@ export const apiService = {
   // Fetch URL info from backend
   getUrlInfo: async (url: string) => {
     try {
-      const response = await api.get('/info', {
+      const response = await api.get('/info/', {
         params: {
           url: url,
         },
