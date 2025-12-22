@@ -23,7 +23,7 @@ export function HomePage() {
           <div className="hero-content">
             <h1 className="hero-title">Welcome to GeoGuard!</h1>
             <p className="hero-subtitle">
-              Geolocation security and monitoring system
+              Geolocation monitoring system
             </p>
           </div>
 

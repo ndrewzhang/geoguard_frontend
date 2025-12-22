@@ -1,7 +1,14 @@
 # React + TypeScript + Vite
+# GeoGuard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GeoGuard is a simple, easy to use app that finds where an IP address or URL comes from. It uses the IPStack service to turn addresses into readable info like country, city, coordinates, and connection type. The frontend is built with React and Vite, and the backend is a Python API that talks to IPStack and returns clean JSON for the UI to show.
 
+Target browsers
+- Desktop: Chrome, Firefox, Edge, Safari
+- Mobile: iOS Safari, Android Chrome
+
+Developer Manual
+Link: docs/DEVELOPER_MANUAL.md
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh

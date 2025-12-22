@@ -39,7 +39,7 @@ export function DashboardPage() {
       <section className="dashboard-header section">
         <div className="container">
           <h1>Security Dashboard</h1>
-          <p>Real-time monitoring and analytics of your locations</p>
+          <p>Real locational data about your URLs</p>
         </div>
       </section>
 
