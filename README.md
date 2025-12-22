@@ -1,6 +1,8 @@
 # React + TypeScript + Vite
 # GeoGuard
 
+VERCEL: https://geoguard-frontend.vercel.app/
+
 GeoGuard is a simple, easy to use app that finds where an IP address or URL comes from. It uses the IPStack service to turn addresses into readable info like country, city, coordinates, and connection type. The frontend is built with React and Vite, and the backend is a Python API that talks to IPStack and returns clean JSON for the UI to show.
 
 Target browsers
